@@ -1,0 +1,112 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+    background: $theme-color;
+    color: $white;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 7px 30px;
+    padding-right: 5px;
+    border-radius: 0;
+    line-height: 1;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    border-radius: 6px;
+    font-family: "DM Sans", sans-serif;
+    overflow: hidden;
+
+    i {
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        background-color: $white;
+        color: $theme-color;
+        margin-left: 30px;
+        @include transition;
+        border-radius: 6px;
+    }
+
+    &::before {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+        border-radius: 6px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+
+    }
+
+    &::after {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+        border-radius: 6px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    &:hover {
+        &::before,&::after {
+            width: 100%;
+        }
+
+        i {
+            background-color: $theme-color;
+            color: $white
+        }
+    }
+
+    &.bg-header {
+        background-color: $header-color;
+
+        &::before,&::after {
+            background-color: $white;
+        }
+
+        i {
+            background-color: $theme-color;
+            color: $white;
+        }
+
+        &:hover {
+            color: $header-color;
+        }
+    }
+}
+
+.link-btn {
+    font-size: 15px;
+    font-weight: 900;
+    color: $theme-color;
+    text-transform: capitalize;
+    display: inline-block;
+    font-family: "DM Sans";
+    margin-top: 10px;
+
+    &:hover {
+        color: $theme-color-2;
+    }
+
+    i {
+        margin-left: 10px;
+    }
+}
+//>>>>> Component Button End <<<<<//
